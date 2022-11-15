@@ -30,6 +30,7 @@ buildscript {
         lifeCycle = "androidx.lifecycle:lifecycle-runtime-ktx:$life_cycle_version"
         liveData = "androidx.lifecycle:lifecycle-livedata-ktx:$life_cycle_version"
         compose_version = '1.1.0-beta01'
+        compose_ui_version = '1.1.1'
     }
 }
 
