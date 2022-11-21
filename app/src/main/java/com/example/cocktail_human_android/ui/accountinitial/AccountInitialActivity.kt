@@ -64,6 +64,9 @@ fun InitialAccountSettingScreen() {
         val checkPasswordState = remember { mutableStateOf("") }
         val emailAddressState = remember { mutableStateOf("") }
         val authNumberState = remember { mutableStateOf("") }
+        val authSendButtonEnableState = remember { mutableStateOf(true) }
+        val authButtonEnableState = remember { mutableStateOf(false) }
+        val completionButtonEnableState = remember { mutableStateOf(false) }
         BlendyAppBar(
             modifier = Modifier
                 .constrainAs(appbar) {
@@ -178,17 +181,22 @@ fun InitialAccountSettingScreen() {
             BlendyButton(
                 onClick = { /*TODO*/ },
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = MaterialTheme.colors.primary
+                    backgroundColor = MaterialTheme.colors.primary,
+                    disabledBackgroundColor = MaterialTheme.colors.primary
                 ),
                 shape = RoundedCornerShape(16.dp),
                 border = BorderStroke(0.dp, MaterialTheme.colors.primary),
-                modifier = Modifier
+                enabled = authSendButtonEnableState.value,
+                modifier = if (authSendButtonEnableState.value) Modifier.fillMaxSize()
+                else Modifier
                     .fillMaxSize()
                     .alpha(0.05f)
             )
             Text(
                 text = stringResource(id = R.string.account_initial_auth_number_send),
-                color = if (isSystemInDarkTheme()) md_theme_dark_onButton else md_theme_light_onButton,
+                color = if (authSendButtonEnableState.value) MaterialTheme.colors.onPrimary else {
+                    if (isSystemInDarkTheme()) md_theme_dark_onButton else md_theme_light_onButton
+                },
                 textAlign = TextAlign.Center,
                 modifier = Modifier.align(Alignment.Center)
             )
@@ -229,17 +237,22 @@ fun InitialAccountSettingScreen() {
             BlendyButton(
                 onClick = { /*TODO*/ },
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = MaterialTheme.colors.primary
+                    backgroundColor = MaterialTheme.colors.primary,
+                    disabledBackgroundColor = MaterialTheme.colors.primary
                 ),
                 shape = RoundedCornerShape(16.dp),
                 border = BorderStroke(0.dp, MaterialTheme.colors.primary),
-                modifier = Modifier
+                enabled = authButtonEnableState.value,
+                modifier = if (authButtonEnableState.value) Modifier.fillMaxSize()
+                else Modifier
                     .fillMaxSize()
                     .alpha(0.05f)
             )
             Text(
                 text = stringResource(id = R.string.account_initial_auth),
-                color = if (isSystemInDarkTheme()) md_theme_dark_onButton else md_theme_light_onButton,
+                color = if (authButtonEnableState.value) MaterialTheme.colors.onPrimary else {
+                    if (isSystemInDarkTheme()) md_theme_dark_onButton else md_theme_light_onButton
+                },
                 modifier = Modifier.align(Alignment.Center)
             )
         }
@@ -269,17 +282,22 @@ fun InitialAccountSettingScreen() {
             BlendyButton(
                 onClick = { /*TODO*/ },
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = MaterialTheme.colors.primary
+                    backgroundColor = MaterialTheme.colors.primary,
+                    disabledBackgroundColor = MaterialTheme.colors.primary
                 ),
                 shape = RoundedCornerShape(16.dp),
                 border = BorderStroke(0.dp, MaterialTheme.colors.primary),
-                modifier = Modifier
+                enabled = completionButtonEnableState.value,
+                modifier = if (completionButtonEnableState.value) Modifier.fillMaxSize()
+                else Modifier
                     .fillMaxSize()
                     .alpha(0.05f)
             )
             Text(
                 text = stringResource(id = R.string.account_initial_completion),
-                color = if (isSystemInDarkTheme()) md_theme_dark_onButton else md_theme_light_onButton,
+                color = if (completionButtonEnableState.value) MaterialTheme.colors.onPrimary else {
+                    if (isSystemInDarkTheme()) md_theme_dark_onButton else md_theme_light_onButton
+                },
                 modifier = Modifier.align(Alignment.Center)
             )
         }
