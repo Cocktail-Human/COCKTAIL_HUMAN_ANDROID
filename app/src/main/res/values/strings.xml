@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">COCKTAIL_HUMAN_ANDROID</string>
+    <string name="app_name">Blendy</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_account_initial">AccountInitialActivity</string>
 
     <string name="login">로그인</string>
     <string name="login_id">아이디</string>
@@ -9,4 +10,17 @@
     <string name="login_password">비밀번호</string>
     <string name="login_find_password">비밀번호 찾기</string>
     <string name="login_app_information">이 앱은 칵테일 사람 동아리 활동을 위해 제작된 앱이며, 관계자의 승인 후 로그인할 수 있습니다.</string>
+
+    <string name="account_initial_title">초기 설정</string>
+    <string name="account_initial_information">처음 로그인하는 경우 새 비밀번호 설정과 가입 요청 시 입력한 이메일(전화번호)를 이용한 사용자 인증이 필요합니다.</string>
+    <string name="account_initial_new_password">새 비밀번호</string>
+    <string name="account_initial_check_password">비밀번호 확인</string>
+    <string name="account_initial_email_address">이메일 주소</string>
+    <string name="account_initial_auth_number_send">인증번호 전송</string>
+    <string name="account_initial_auth_number">인증번호</string>
+    <string name="account_initial_auth">인증</string>
+    <string name="account_initial_completion">완료</string>
+    <string name="account_initial_password_not_correct">비밀번호가 일치하지 않습니다.</string>
+    <string name="account_initial_email_not_correct">올바른 이메일 형식을 입력해 주세요.</string>
+    <string name="account_initial_auth_number_not_correct">인증번호가 일치하지 않습니다.</string>
 </resources>

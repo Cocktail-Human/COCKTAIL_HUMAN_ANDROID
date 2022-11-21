@@ -2,7 +2,6 @@ package com.example.cocktail_human_android.ui.compose.textfield
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.ZeroCornerSize
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -21,7 +20,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.cocktail_human_android.ui.theme.COCKTAIL_HUMAN_ANDROIDTheme
+import com.example.cocktail_human_android.ui.theme.BlendyTheme
 import com.example.cocktail_human_android.ui.theme.Shapes
 import com.example.cocktail_human_android.ui.theme.White
 
@@ -124,7 +123,7 @@ fun BlendyPasswordTextField(
 @Preview(name = "BlendyTextField")
 @Composable
 fun PreviewBlendyTextField() {
-    COCKTAIL_HUMAN_ANDROIDTheme {
+    BlendyTheme {
         BlendyTextField(
             value = "test",
             onValueChange = {},
@@ -136,7 +135,7 @@ fun PreviewBlendyTextField() {
 @Preview(name = "BlendyTextFieldPlaceHolder")
 @Composable
 fun PreviewBlendyTextFieldPlaceHolder() {
-    COCKTAIL_HUMAN_ANDROIDTheme {
+    BlendyTheme {
         BlendyTextField(
             value = "",
             onValueChange = {},
@@ -149,7 +148,7 @@ fun PreviewBlendyTextFieldPlaceHolder() {
 @Preview(name = "BlendyPasswordTextField")
 @Composable
 fun PreviewBlendyPasswordTextField() {
-    COCKTAIL_HUMAN_ANDROIDTheme {
+    BlendyTheme {
         BlendyPasswordTextField(
             value = "test",
             onValueChange = {},

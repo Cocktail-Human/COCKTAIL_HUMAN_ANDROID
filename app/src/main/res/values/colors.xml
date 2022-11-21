@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="invisible">#00FFFFFF</color>
     <color name="login_status_bar">#FF7ac3d1</color>
+    <color name="light_background">#FFFFFBFF</color>
+    <color name="dark_background">#FF201A19</color>
 </resources>

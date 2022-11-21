@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.cocktail_human_android.ui.theme.Black
-import com.example.cocktail_human_android.ui.theme.COCKTAIL_HUMAN_ANDROIDTheme
+import com.example.cocktail_human_android.ui.theme.BlendyTheme
 import com.example.cocktail_human_android.ui.theme.Shapes
 import com.example.cocktail_human_android.ui.theme.White
 
@@ -34,7 +34,7 @@ fun BlendyButton(
         contentColor = Black
     ),
     contentPadding: PaddingValues = ButtonDefaults.ContentPadding,
-    content: @Composable RowScope.() -> Unit
+    content: @Composable RowScope.() -> Unit = {}
 ) {
     Button(
         modifier = modifier,
@@ -53,7 +53,7 @@ fun BlendyButton(
 @Preview
 @Composable
 fun PreviewBlendyButton() {
-    COCKTAIL_HUMAN_ANDROIDTheme {
+    BlendyTheme {
         BlendyButton(onClick = { /*TODO*/ }) {
             Text("로그인")
         }

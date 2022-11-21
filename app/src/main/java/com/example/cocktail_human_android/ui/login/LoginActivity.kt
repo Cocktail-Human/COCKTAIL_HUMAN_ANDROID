@@ -1,6 +1,9 @@
 package com.example.cocktail_human_android.ui.login
 
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -37,19 +40,28 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.view.WindowCompat
 import com.example.cocktail_human_android.R
+import com.example.cocktail_human_android.ui.accountinitial.AccountInitialActivity
 import com.example.cocktail_human_android.ui.compose.button.BlendyButton
 import com.example.cocktail_human_android.ui.compose.textfield.BlendyPasswordTextField
 import com.example.cocktail_human_android.ui.compose.textfield.BlendyTextField
-import com.example.cocktail_human_android.ui.theme.COCKTAIL_HUMAN_ANDROIDTheme
+import com.example.cocktail_human_android.ui.theme.BlendyTheme
 import com.example.cocktail_human_android.ui.theme.md_theme_dark_blurBoxColor
 import com.example.cocktail_human_android.ui.theme.md_theme_light_blurBoxColor
 
 class LoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
+        window.apply {
+            setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            )
+        }
+        if(Build.VERSION.SDK_INT >= 30) {	// API 30 에 적용
             WindowCompat.setDecorFitsSystemWindows(window, false)
-            COCKTAIL_HUMAN_ANDROIDTheme {
+        }
+        setContent {
+            BlendyTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
@@ -58,6 +70,10 @@ class LoginActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    fun goAccountInitialActivity() {
+        Intent(this, AccountInitialActivity::class.java).run { startActivity(this) }
     }
 }
 
@@ -185,7 +201,10 @@ fun LoginScreen() {
                     ),
                     shape = RoundedCornerShape(16.dp),
                     border = null,
-                    onClick = { /*TODO*/ }
+                    onClick = {
+                        (context as LoginActivity).goAccountInitialActivity()
+                        /*TODO*/
+                    }
                 ) {
                     Text(
                         text = stringResource(id = R.string.login),
